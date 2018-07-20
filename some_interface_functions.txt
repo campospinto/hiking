@@ -1,0 +1,14 @@
+#-------------------------------------------
+drs = DeRhamSequence( ... )
+
+phi = FemField( drs['V0'], 'phi' )
+E   = FemField( drs['V1'], 'E'   )
+
+f = lambda x,y: ...
+
+drs.proj( f, phi )  # in: 'f' , out: 'phi'
+drs.diff( phi, E )  # in: 'phi, out: 'E'
+
+M = drs['V0'].mass_matrix
+S = drs['V0'].stiffness_matrix
+#-------------------------------------------
